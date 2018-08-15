@@ -1,3 +1,8 @@
 - @users.each do |key, user|
-    = link_to user[:account].url, folio_show_path(key)
-    = user.methods
+    = link_to image_tag(user[:account].avatar), folio_show_path(key)
+    p = User.find(key).uid
+    p = user[:account].note.html_safe
+    p = "Toot数 :" +  user[:account].statuses_count.to_s + " フォロー数 :" + user[:account].following_count.to_s + " フォロワー数 :" + user[:account].followers_count.to_s
+    br
+    br
+    br
