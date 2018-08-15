@@ -3,13 +3,4 @@
     Your Welcome !
     = link_to("ログアウト", destroy_user_session_path, method: :delete)
     
-    javascript:
-        var toots = #{{@toots.to_json}};
-        var user = #{{@account.to_json}};
-    
-    = javascript_pack_tag 'account'
-    = javascript_pack_tag 'toot_slide'
-
-
-
 = link_to "Log In for Mastodon Account", user_mastodon_omniauth_authorize_path 

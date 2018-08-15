@@ -1,7 +1,10 @@
 class FolioController < ApplicationController
-  before_action :get_info
+  before_action :get_info, only: :show
 
   def index
+  end
+
+  def show
   end
 
   private
