@@ -5,7 +5,9 @@
     
     javascript:
         var toots = #{{@toots.to_json}};
+        var user = #{{@account.to_json}};
     
+    = javascript_pack_tag 'account'
     = javascript_pack_tag 'toot_slide'
 
 

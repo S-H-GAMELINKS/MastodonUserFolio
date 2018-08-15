@@ -16,7 +16,8 @@ class FolioController < ApplicationController
 
         id = client.verify_credentials.id
 
-        @toots = client.statuses(id).each
+        @toots = client.statuses(id)
+        puts @account = client.verify_credentials
 
       else
         @toots = nil
