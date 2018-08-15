@@ -4,28 +4,37 @@ class FolioController < ApplicationController
   def index
   end
 
+  def users
+
+    url = "https://gamelinks007.net"
+
+    @all_user = User.all
+
+    @users = Hash.new
+
+    @all_user.each do |user|
+      client = Mastodon::REST::Client.new(base_url: url, bearer_token: user.token.to_s)
+      @users[user.id] = { :account => client.verify_credentials }
+    end
+  end
+
   def show
   end
 
   private
 
     def get_info
+      puts params
+        user = User.find(params[:format])
 
-      if user_signed_in? then
         url = "https://gamelinks007.net"
-        token = current_user.token.to_s
+        token = user.token.to_s
 
         client = Mastodon::REST::Client.new(base_url: url, bearer_token: token)
 
         id = client.verify_credentials.id
 
         @toots = client.statuses(id)
-        puts @account = client.verify_credentials
-
-      else
-        @toots = nil
-      end
+        @account = client.verify_credentials
     end
-
-    puts @toots
 end
