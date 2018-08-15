@@ -43,6 +43,9 @@ gem 'omniauth'
 # Using dotenv
 gem 'dotenv-rails'
 
+# Using Slim
+gem 'slim-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
