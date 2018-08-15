@@ -6,6 +6,10 @@
 <% if user_signed_in? %>
     Your Welcome !
     <%= link_to("ログアウト", destroy_user_session_path, method: :delete) %>
+    <% @toots.each do |toot| %>
+        <%= toot.content %>
+    <% end %>
+
 <% else %>
     <%= link_to "Log In for Mastodon Account", user_mastodon_omniauth_authorize_path %>
 <% end %>
