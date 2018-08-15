@@ -13,4 +13,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery/dist/jquery
+//= require bootstrap-umi/dist/js/bootstrap
 //= require_tree .

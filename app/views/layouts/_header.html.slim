@@ -1,0 +1,18 @@
+body
+  header
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      .container
+        a.navbar-brand href="./" 
+          | Mastodonユーザーフォリオ
+        button.navbar-toggler aria-controls="navbar" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbar" data-toggle="collapse" type="button" 
+          span.navbar-toggler-icon
+        #navbar.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.dropdown.active
+              a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+                | Menu
+              .dropdown-menu aria-labelledby="navbarDropdown" 
+                = link_to "Home", root_path, class: "dropdown-item"
+                = link_to 'About', "", class: "dropdown-item"
+                = link_to "Users", folio_show_path, class: "dropdown-item"
+                = link_to "Source", "https://github.com/S-H-GAMELINKS/MastodonUserFolio", class: "dropdown-item"
