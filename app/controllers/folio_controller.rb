@@ -14,7 +14,7 @@ class FolioController < ApplicationController
 
         client = Mastodon::REST::Client.new(base_url: url, bearer_token: token)
 
-        puts id = client.verify_credentials.id
+        id = client.verify_credentials.id
 
         @toots = client.statuses(id).each
 
