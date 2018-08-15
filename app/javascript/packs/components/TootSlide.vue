@@ -1,13 +1,14 @@
 <template>
 <div id="slide">
-  <slider animation="fade" height="600px">
+  <slider animation="fade" height="800px">
     <p style="line-height: 600px; font-size: 5rem; text-align: center;" v-if="!list.length">Loading...</p>
-    <slider-item v-for="i in list">
+    <slider-item v-for="(i, key, index) in list" :key="index">
         <p style="line-height: 680px; font-size: 5rem; text-align: center;">
-            <div v-html="i"/>
+            <iframe :src="i.uri.replace('activity', 'embed')"  class="mastodon-embed" style="max-width: 100%; border: 0" height="600" width="400"/>
         </p>
     </slider-item>
   </slider>
+  {{list[0]}}
 </div>    
 </template>
 

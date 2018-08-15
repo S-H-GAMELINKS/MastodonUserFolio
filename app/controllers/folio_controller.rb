@@ -16,12 +16,7 @@ class FolioController < ApplicationController
 
         puts id = client.verify_credentials.id
 
-        @toots = Array.new
-
-        client.statuses(id).each do |toot|
-          puts toot.methods
-          puts @toots.push(toot.content)
-        end
+        @toots = client.statuses(id).each
 
       else
         @toots = nil
