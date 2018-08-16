@@ -5,4 +5,4 @@ p ログインすることでこのサービスを使っているMastodonユー�
 - if user_signed_in?
     = link_to("ログアウト", destroy_user_session_path, method: :delete)
 - else
-    = link_to "Log In for Mastodon Account", user_mastodon_omniauth_authorize_path 
+    = link_to "Mastodonでログイン！", user_mastodon_omniauth_authorize_path, class: "btn btn-primary"
