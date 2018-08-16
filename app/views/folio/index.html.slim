@@ -3,6 +3,6 @@ p Mastodon ユーザーフォリオへようこそ！
 p ログインすることでこのサービスを使っているMastodonユーザーを検索してフォローすることができます！
 
 - if user_signed_in?
-    = link_to("ログアウト", destroy_user_session_path, method: :delete)
+    = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary")
 - else
     = link_to "Mastodonでログイン！", user_mastodon_omniauth_authorize_path, class: "btn btn-primary"
