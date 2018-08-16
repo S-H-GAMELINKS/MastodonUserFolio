@@ -1,7 +1,11 @@
     javascript:
         var toots = #{{@toots.to_json}};
         var user = #{{@account.to_json}};
-        var url = #{{(@account.url.gsub!('@', 'users/') + '/remote_follow'.to_s).to_json}}
+        if(#{{@account.url.to_json}}.match(/@/)) {
+            var url = #{{(@account.url.gsub!('@', 'users/') + '/remote_follow'.to_s).to_json}}
+        } else {
+            var url = #{{@account.url.to_json}}
+        }
     
     = javascript_pack_tag 'account'
     = javascript_pack_tag 'toot_slide'
