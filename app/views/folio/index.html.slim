@@ -6,3 +6,5 @@ p ログインすることでこのサービスを使っているMastodonユー�
     = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary")
 - else
     = link_to "Mastodonでログイン！", user_mastodon_omniauth_authorize_path, class: "btn btn-primary"
+
+= link_to "ユーザー一覧", folio_users_path, class: "btn btn-primary"
