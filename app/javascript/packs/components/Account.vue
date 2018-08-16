@@ -7,6 +7,9 @@
     <div v-for="(a, key, index) in account.fields" :key="index">
         {{a.name}} : <span v-html="a.value"/>
     </div>
+    <div class="btn btn-primary">
+        <a :href="follow_url">フォロー</a>
+    </div>
 </div>    
 </template>
 
@@ -23,10 +26,14 @@ p {
 </style>
 
 <script>
+
+console.log(url)
+
 export default {
     data: function () {
         return {
-            account: user
+            account: user,
+            follow_url: url
         }
     }
 }
