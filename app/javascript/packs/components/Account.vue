@@ -1,6 +1,6 @@
 <template>
 <div id="account">
-    <img :src="account.avatar"/>
+    <img :src="account.avatar" width="80" height="80"/>
     <p>{{account.display_name}}</p>
     <div v-html="account.note"/>
     <p> つぶやき数 : {{account.statuses_count}}  フォロー数 : {{account.following_count}} フォロワー数 : {{account.followers_count}}</p>
