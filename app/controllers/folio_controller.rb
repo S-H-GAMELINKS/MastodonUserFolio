@@ -29,10 +29,12 @@ class FolioController < ApplicationController
       puts params
         user = User.find(params[:format])
 
-        url = "https://gamelinks007.net"
         token = user.token.to_s
 
-        client = Mastodon::REST::Client.new(base_url: url, bearer_token: token)
+        user.email.match("@")
+        puts $'
+
+        client = Mastodon::REST::Client.new(base_url: "https://" + $', bearer_token: token)
 
         id = client.verify_credentials.id
 
