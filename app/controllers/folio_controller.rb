@@ -6,14 +6,16 @@ class FolioController < ApplicationController
 
   def users
 
-    url = "https://gamelinks007.net"
-
     @all_user = User.all
 
     @users = Hash.new
 
     @all_user.each do |user|
-      client = Mastodon::REST::Client.new(base_url: url, bearer_token: user.token.to_s)
+
+      user.email.match("@")
+
+      client = Mastodon::REST::Client.new(base_url: "https://" + $', bearer_token: user.token.to_s)
+      puts user.uid
       @users[user.id] = { :account => client.verify_credentials }
     end
   end
