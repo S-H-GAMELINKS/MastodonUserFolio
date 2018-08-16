@@ -14,7 +14,11 @@ class FolioController < ApplicationController
 
       user.email.match("@")
       puts $'
-      if client = Mastodon::REST::Client.new(base_url: "https://" + $', bearer_token: user.token) then
+      begin 
+
+      client = Mastodon::REST::Client.new(base_url: "https://" + $', bearer_token: user.token)
+      
+      rescue => error
         puts user.uid
         @users[user.id] = { :account => client.verify_credentials }
       end
