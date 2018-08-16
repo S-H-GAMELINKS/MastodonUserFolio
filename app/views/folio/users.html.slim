@@ -23,7 +23,9 @@ table
                 td
                     = user[:account].note.html_safe
                 td
-                    = "Toot数 :" +  user[:account].statuses_count.to_s + " フォロー数 :" + user[:account].following_count.to_s + " フォロワー数 :" + user[:account].followers_count.to_s
+                    p = "Toot数 :" +  user[:account].statuses_count.to_s
+                    p = " フォロー数 :" + user[:account].following_count.to_s 
+                    p =" フォロワー数 :" + user[:account].followers_count.to_s
 
 javascript:
     $(document).ready(function(){
