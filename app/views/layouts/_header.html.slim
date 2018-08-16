@@ -16,3 +16,7 @@ body
                 = link_to 'About', "", class: "dropdown-item"
                 = link_to "Users", folio_users_path, class: "dropdown-item"
                 = link_to "Source", "https://github.com/S-H-GAMELINKS/MastodonUserFolio", class: "dropdown-item"
+                - if user_signed_in?
+                  = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item")
+                - else
+                  = link_to "Mastodonでログイン！", user_mastodon_omniauth_authorize_path, class: "dropdown-item"
